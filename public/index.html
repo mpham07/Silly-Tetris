@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Silly Tetris - Online</title>
+<link rel="stylesheet" type="text/css" href="format.css" medial="all" />
+</head>
+<body bgcolor="#000000" >
+    <table id = "maintable" align="center" width="677" border="4" height="588" onkeydown="game.onkeydown(event)">
+    <tr>
+    	<td id = "b1" width="390" valign="top" bgcolor="#000000"></td>
+    	<td id = "b2" align="center" valign="top" bgcolor="#000000">
+        	<br />
+        	<table align="center" border="2">
+            <tr>
+            	<td id="b3" width="124" height="124" valign="top">
+            <tr>
+                <td height=" 50" class="style10" align="center">Score : <span id = "score">00</span></td>
+            <tr>
+                <td height="50" align="center" class="style10" > <span id = "h">00</span>:<span id = "m">00</span>:<span id ="s">00</span> </td>
+            </table>
+            <br />
+            <a href="instruction.html">How to play?</a>
+            <br> <br>
+         	  <input type="image" id = "btnStart" name = "start" src="Image/UI/btnStart.png" width="55" height="34" onclick="game.newGame()" >
+            <br>
+            <input type="image" id = "btnPause" name = "pause" src="Image/UI/btnPause.png"  value="Pause" width="55" height="34" onclick="game.pauseGame()" >
+            <br>
+            <input type="image" src="Image/UI/fb.png"  value = "FB" width="26" height="26" onclick="OpenFBPage()">
+        </td>
+    </tr>
+	</table>
+
+	<script language="javascript" src="panelAdd.js"></script>
+	<script language="javascript" src="panel.js"></script>
+	<script language="javascript" src="piece.js"></script>
+    <script language="javascript" src="pattern.js"></script>
+    <script language="javascript" src="process.js"></script>
+	<script language="javascript" src="details.js"></script>
+    <script language="javascript" src="clock.js"></script>
+
+    <script language="javascript">
+
+	var game;
+
+		game = panel();
+		document.getElementById("b1").appendChild(game);
+    document.body.addEventListener('keydown',function(ev){
+      game.funcKeyDown(ev);
+    })
+	</script>
+
+</body>
+</html>
